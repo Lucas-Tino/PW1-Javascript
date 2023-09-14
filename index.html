@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript</title>
+    <script>
+        function validarDados() {
+            if (document.getElementById('nome').value == "") {
+                alert("O campo nome está vazio. Favor preencher corretamente.");
+            }
+            if (document.getElementById('endereco').value == "") {
+                alert("O campo endereço está vazio. Favor preencher corretamente.");
+            }
+            if (document.getElementById('bairro').value == "") {
+                alert("O campo bairro está vazio. Favor preencher corretamente.");
+            }
+            var tamanhocep = document.getElementById('cep').value;
+            if (tamanhocep.length != 8) {
+                alert("O campo cep está vazio ou foi preenchido incorretamente. Favor preencher corretamente. \nSugestão: remova o hífen(-) de seu cep e digite apenas os números.");
+            }
+            if (document.getElementById('cidade').value == "") {
+                alert("O campo cidade está vazio. Favor preencher corretamente.");
+            }
+            if (document.getElementById('estado').value == "n") {
+                alert("O campo estado não foi preenchido. Favor preencher corretamente.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        Nome: <input type="text" name="nome" id="nome"><br>
+        Endereço: <input type="text" name="endereco" id="endereco"><br>
+        Bairro: <input type="text" name="bairro" id="bairro"><br>
+        Cep: <input type="number" name="cep" id="cep"><br>
+        Cidade: <input type="text" name="cidade" id="cidade"><br>
+        Estado: 
+        <select name="estado" id="estado">
+            <option selected disabled hidden value="n">Selecione seu Estado</option>
+            <option value="ac">AC</option>
+            <option value="al">AL</option>
+            <option value="ap">AP</option>
+            <option value="am">AM</option>
+            <option value="ba">BA</option>
+            <option value="ce">CE</option>
+            <option value="df">DF</option>
+            <option value="es">ES</option>
+            <option value="go">GO</option>
+            <option value="ma">MA</option>
+            <option value="mt">MT</option>
+            <option value="ms">MS</option>
+            <option value="mg">MG</option>
+            <option value="pa">PA</option>
+            <option value="pb">PB</option>
+            <option value="pr">PR</option>
+            <option value="pe">PE</option>
+            <option value="pi">PI</option>
+            <option value="rj">RJ</option>
+            <option value="rn">RN</option>
+            <option value="rs">RS</option>
+            <option value="ro">RO</option>
+            <option value="rr">RR</option>
+            <option value="sc">SC</option>
+            <option value="sp">SP</option>
+            <option value="se">SE</option>
+            <option value="to">TO</option>
+        </select>
+        <br><br>
+        <button name="cadastrar" id="cadastrar" onclick="validarDados()">Cadastrar</button>
+    </form>
+</body>
+</html>
